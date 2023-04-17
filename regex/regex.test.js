@@ -5,7 +5,8 @@ characters (no numbers and symbols) and it should end with capital A else return
 
 function capitalA(s) {
   // Add your logic.
-  return;
+  let regex=/^[A-Z a-z]*A$/gm;
+  return regex.test(s);
 }
 
 /* Write a function that take a string and return true if the the sting is following the emails pattern
@@ -13,7 +14,8 @@ which end with io (example@example.io) */
 
 function ioEmail(email) {
   // Add your logic.
-  return;
+  let regex=/^[A-Z|a-z|_][\w]*@[\w]*\.io/gm;
+  return regex.test(email);
 }
 
 /* You have a text that contain image names with their extention you need to write a function to 
@@ -24,7 +26,12 @@ required extention are jpg, jpeg and png.
 function imagesSearcher(text) {
   let arr = [];
   // Add your logic.
-  return arr;
+  let regex=/([A-Za-z0-9]\w\S\.)+(jpg|jpeg|png)/gm;
+  let myString;
+  while(myString=regex.exec(text)){
+    arr.push(myString[0])
+  }
+ return arr;
 }
 
 describe("Test capitalA", () => {
